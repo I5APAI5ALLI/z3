@@ -10,7 +10,6 @@ namespace OrderManagement
     {
         static void Main(string[] args)
         {
-            // Устанавливаем кодировку консоли на UTF-8
             Console.OutputEncoding = Encoding.UTF8;
             Console.InputEncoding = Encoding.UTF8;
 
@@ -141,8 +140,7 @@ namespace OrderManagement
                 var clientSheet = workbook.Worksheet("Клиенты");
                 var orderSheet = workbook.Worksheet("Заявки");
 
-                // Загрузка данных клиентов
-                var clientRows = clientSheet.RangeUsed().RowsUsed().Skip(1); // Пропускаем заголовок
+                var clientRows = clientSheet.RangeUsed().RowsUsed().Skip(1); 
 
                 foreach (var row in clientRows)
                 {
@@ -156,8 +154,7 @@ namespace OrderManagement
                     clients.Add(client);
                 }
 
-                // Загрузка данных заявок
-                var orderRows = orderSheet.RangeUsed().RowsUsed().Skip(1); // Пропускаем заголовок
+                var orderRows = orderSheet.RangeUsed().RowsUsed().Skip(1);
 
                 foreach (var row in orderRows)
                 {
